@@ -316,9 +316,9 @@ section{padding-block:var(--gap-xl);}
   filter:grayscale(1) brightness(3);
 }
 .port-visual .wm::after{
-  content:"Foto pendiente — reemplázala en config.js";
+  content:"[ Espacio para imagen ]";
   position:absolute;top:.8rem;right:.9rem;
-  font-size:.66rem;color:rgba(255,255,255,.45);
+  font-size:.7rem;color:rgba(255,255,255,.4);
   font-family:var(--font-body);letter-spacing:.01em;
   text-align:right;max-width:60%;
 }

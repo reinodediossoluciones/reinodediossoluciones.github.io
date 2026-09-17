@@ -107,7 +107,7 @@ window.RDS_CONFIG = {
   portafolio: {
     titulo: "Portafolio",
     subtitulo: "Trabajos realizados y tipos de operación que atendemos.",
-    nota: "Espacio preparado para fotos reales de los trabajos — agrégalas en assets/portafolio/ y referencia el archivo aquí.",
+    nota: "Seguimos sumando proyectos a esta sección a medida que avanzan nuestras operaciones.",
     trabajos: [
       { imagen: "", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue de contenedores", descripcion: "Movimiento de mercancía para empresa del sector industrial." },
       { imagen: "", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza de bodega", descripcion: "Limpieza profunda de instalaciones antes de puesta en operación." },

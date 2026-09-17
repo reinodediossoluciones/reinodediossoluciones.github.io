@@ -145,7 +145,7 @@
               const msg = cfg.tarifario.mensajeCotizacion
                 .replace("{servicio}", it.servicio)
                 .replace("{linea}", b.nombre);
-              const waHref = `https://wa.me/${cfg.empresa.whatsapp}`;
+              const waHref = `https://wa.me/${cfg.empresa.whatsapp}?text=${encodeURIComponent(msg)}`;
               const mailHref = `mailto:${cfg.empresa.correo}?subject=${encodeURIComponent("Cotización: " + it.servicio)}&body=${encodeURIComponent(msg)}`;
               priceHtml = `
                 <div class="quote-wrap">

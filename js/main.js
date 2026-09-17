@@ -145,12 +145,15 @@
               const msg = cfg.tarifario.mensajeCotizacion
                 .replace("{servicio}", it.servicio)
                 .replace("{linea}", b.nombre);
-              const waHref = `https://wa.me/${cfg.empresa.whatsapp}?text=${encodeURIComponent(msg)}`;
+              const waHref = `https://wa.me/${cfg.empresa.whatsapp}`;
               const mailHref = `mailto:${cfg.empresa.correo}?subject=${encodeURIComponent("Cotización: " + it.servicio)}&body=${encodeURIComponent(msg)}`;
               priceHtml = `
-                <div class="quote-actions">
-                  <a class="quote-btn" href="${mailHref}">${ICONS.mail}Correo</a>
-                  <a class="quote-btn" href="${waHref}" target="_blank" rel="noopener">${ICONS.chat}WhatsApp</a>
+                <div class="quote-wrap">
+                  <button type="button" class="quote-btn quote-toggle">Cotizar</button>
+                  <div class="quote-menu">
+                    <a class="quote-option" href="${waHref}" target="_blank" rel="noopener">${ICONS.chat}WhatsApp</a>
+                    <a class="quote-option" href="${mailHref}">${ICONS.mail}Correo</a>
+                  </div>
                 </div>`;
             } else {
               priceHtml = `<span class="fixed">${it.precio}</span>`;
@@ -167,6 +170,23 @@
         </div>
       </div>
     `).join("");
+  }
+
+  function setupQuoteMenus() {
+    const wraps = document.querySelectorAll(".quote-wrap");
+    wraps.forEach(wrap => {
+      const toggle = wrap.querySelector(".quote-toggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = wrap.classList.contains("open");
+        wraps.forEach(w => w.classList.remove("open"));
+        if (!isOpen) wrap.classList.add("open");
+      });
+    });
+    document.addEventListener("click", () => {
+      wraps.forEach(w => w.classList.remove("open"));
+    });
   }
 
   function setupNav() {
@@ -190,6 +210,7 @@
     renderProceso();
     renderPortafolio();
     renderTarifario();
+    setupQuoteMenus();
     setupNav();
   });
 })();

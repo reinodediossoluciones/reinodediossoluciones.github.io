@@ -11,7 +11,9 @@
   const ICONS = {
     grua: `<svg viewBox="0 0 48 48" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 40h20"/><path d="M14 40V16l16-8"/><path d="M30 8l6 6"/><path d="M16 24h12v12H16z"/><path d="M16 30h12"/><path d="M20 24v12M24 24v12"/></svg>`,
     escoba: `<svg viewBox="0 0 48 48" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M27 6 15 30"/><path d="M15 30 8 42l16-6"/><path d="M24 42h14"/><path d="M20 24l14-4"/><path d="M22 28l13-3"/></svg>`,
-    engranaje: `<svg viewBox="0 0 48 48" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="7"/><path d="M24 4v6M24 38v6M44 24h-6M10 24H4M37.5 10.5l-4.2 4.2M14.7 33.3l-4.2 4.2M37.5 37.5l-4.2-4.2M14.7 14.7l-4.2-4.2"/></svg>`
+    engranaje: `<svg viewBox="0 0 48 48" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="7"/><path d="M24 4v6M24 38v6M44 24h-6M10 24H4M37.5 10.5l-4.2 4.2M14.7 33.3l-4.2 4.2M37.5 37.5l-4.2-4.2M14.7 14.7l-4.2-4.2"/></svg>`,
+    mail: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.74-.9L3 21l1.9-5.76A8.5 8.5 0 1 1 21 11.5z"/></svg>`
   };
 
   function txt(id, value) {
@@ -135,14 +137,34 @@
     host.innerHTML = cfg.tarifario.bloques.map(b => `
       <div class="tariff-block">
         <h3>${b.nombre}</h3>
-        <table class="tariff-table">
-          ${b.items.map(it => `
-            <tr>
-              <td class="svc">${it.servicio}</td>
-              <td class="desc">${it.descripcion}</td>
-              <td class="price">${it.precio}</td>
-            </tr>`).join("")}
-        </table>
+        <div class="tariff-rows">
+          ${b.items.map(it => {
+            const isQuote = String(it.precio).trim().toLowerCase() === "cotizar";
+            let priceHtml;
+            if (isQuote) {
+              const msg = cfg.tarifario.mensajeCotizacion
+                .replace("{servicio}", it.servicio)
+                .replace("{linea}", b.nombre);
+              const waHref = `https://wa.me/${cfg.empresa.whatsapp}?text=${encodeURIComponent(msg)}`;
+              const mailHref = `mailto:${cfg.empresa.correo}?subject=${encodeURIComponent("Cotización: " + it.servicio)}&body=${encodeURIComponent(msg)}`;
+              priceHtml = `
+                <div class="quote-actions">
+                  <a class="quote-btn" href="${mailHref}">${ICONS.mail}Correo</a>
+                  <a class="quote-btn" href="${waHref}" target="_blank" rel="noopener">${ICONS.chat}WhatsApp</a>
+                </div>`;
+            } else {
+              priceHtml = `<span class="fixed">${it.precio}</span>`;
+            }
+            return `
+            <div class="tariff-row">
+              <div class="tariff-main">
+                <span class="svc">${it.servicio}</span>
+                <span class="desc">${it.descripcion}</span>
+              </div>
+              <div class="tariff-price">${priceHtml}</div>
+            </div>`;
+          }).join("")}
+        </div>
       </div>
     `).join("");
   }

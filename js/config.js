@@ -23,7 +23,7 @@ window.RDS_CONFIG = {
     direccionCompleta: "Carrera 68E # 3F-30, Barrio El Reposo, Cartagena, Bolívar",
     telefono: "302 297 8363",       // se usa para el enlace de llamada
     whatsapp: "573022978363",       // solo números, con indicativo del país, sin +
-    correo: "contacto@reinodediossoluciones.com", // cámbialo por el correo real
+    correo: "reinodediossoluciones@gmail.com",
     horario: "Lunes a sábado, 7:00 a.m. – 5:00 p.m.",
     anioFundacion: "2024"
   },
@@ -117,13 +117,18 @@ window.RDS_CONFIG = {
 
   // -------------------------------------------------------------
   // 8. TARIFARIO
-  //    Deja "precio" vacío ("") o escribe "Cotizar" si aún no quieres
-  //    publicar el valor. Cuando lo tengas, escribe por ejemplo "$120.000".
+  //    Los precios dicen "Cotizar": eso hace que en la página aparezcan
+  //    botones de Correo y WhatsApp ya redactados pidiendo esa cotización.
+  //    Cuando definas un precio fijo, reemplaza "Cotizar" por el valor,
+  //    por ejemplo "$120.000", y el botón desaparece (queda solo el precio).
   // -------------------------------------------------------------
   tarifario: {
     titulo: "Tarifario",
     subtitulo: "Valores de referencia. La tarifa final depende de volumen, horario y frecuencia.",
     notaFinal: "Los precios no incluyen desplazamientos fuera de Cartagena ni turnos nocturnos o festivos, que se cotizan aparte.",
+    // Mensaje que se arma solo al tocar "Correo" o "WhatsApp" en un servicio
+    // marcado como "Cotizar". {servicio} y {linea} se reemplazan automáticamente.
+    mensajeCotizacion: "Hola, quiero una cotización para: {servicio} ({linea}).",
     bloques: [
       {
         nombre: "Logística y carga",

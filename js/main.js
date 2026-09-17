@@ -117,9 +117,10 @@
     if (!host) return;
     host.innerHTML = cfg.portafolio.trabajos.map(t => {
       const bg = t.imagen ? `style="background-image:url('${t.imagen}');background-size:cover;background-position:center;"` : "";
+      const watermark = t.imagen ? "" : `<div class="wm"><img src="assets/logo.png" alt=""></div>`;
       return `
       <article class="port-card">
-        <div class="port-visual" ${bg}><span>${t.etiqueta}</span></div>
+        <div class="port-visual" ${bg}>${watermark}<span>${t.etiqueta}</span></div>
         <div class="port-body">
           <h3>${t.titulo}</h3>
           <p>${t.descripcion}</p>

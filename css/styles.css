@@ -302,10 +302,25 @@ section{padding-block:var(--gap-xl);}
   position:relative;
 }
 .port-visual span{
-  position:absolute;left:1rem;bottom:1rem;
+  position:absolute;left:1rem;bottom:1rem;z-index:2;
   font-family:var(--font-display);color:var(--gold-500);
   font-size:.78rem;letter-spacing:.05em;
   background:rgba(14,34,58,.75);padding:.3rem .6rem;
+}
+.port-visual .wm{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.port-visual .wm img{
+  width:34%;min-width:64px;opacity:.22;
+  filter:grayscale(1) brightness(3);
+}
+.port-visual .wm::after{
+  content:"Foto pendiente — reemplázala en config.js";
+  position:absolute;top:.8rem;right:.9rem;
+  font-size:.66rem;color:rgba(255,255,255,.45);
+  font-family:var(--font-body);letter-spacing:.01em;
+  text-align:right;max-width:60%;
 }
 .port-body{padding:1.2rem 1.3rem 1.4rem;}
 .port-body h3{font-size:1.12rem;color:var(--navy-950);margin-bottom:.35rem;}

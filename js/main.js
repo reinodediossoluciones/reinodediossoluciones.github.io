@@ -15,7 +15,9 @@
     montacarga: `<svg viewBox="0 0 48 48" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 40h10"/><path d="M12 40V20h4v20"/><path d="M16 24h14"/><path d="M30 24V10h6"/><rect x="16" y="28" width="10" height="12"/><path d="M34 14c1 2 1 4 0 6M38 12c1.5 3 1.5 6 0 9M42 16c.8 1.6.8 3.2 0 4.8"/></svg>`,
     pintura: `<svg viewBox="0 0 48 48" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9" width="20" height="10" rx="2"/><path d="M18 19v6"/><path d="M14 25h8v5h-8z"/><path d="M18 30v9"/><path d="M31 11l8-4M35 7l4 4"/></svg>`,
     mail: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>`,
-    chat: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.74-.9L3 21l1.9-5.76A8.5 8.5 0 1 1 21 11.5z"/></svg>`
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.74-.9L3 21l1.9-5.76A8.5 8.5 0 1 1 21 11.5z"/></svg>`,
+    pdf: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>`,
+    download: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>`
   };
 
   function txt(id, value) {
@@ -67,6 +69,9 @@
     txt("tariff-title", cfg.tarifario.titulo);
     txt("tariff-sub", cfg.tarifario.subtitulo);
     txt("tariff-foot", cfg.tarifario.notaFinal);
+
+    txt("legal-title", cfg.legales.titulo);
+    txt("legal-sub", cfg.legales.subtitulo);
 
     txt("contact-title", cfg.contacto.titulo);
     txt("contact-sub", cfg.contacto.subtitulo);
@@ -174,6 +179,21 @@
     `).join("");
   }
 
+  function renderLegales() {
+    const host = document.getElementById("legal-list");
+    if (!host) return;
+    host.innerHTML = cfg.legales.documentos.map(d => `
+      <a class="legal-card" href="${d.archivo}" target="_blank" rel="noopener" download>
+        <div class="legal-icon">${ICONS.pdf}</div>
+        <div class="legal-body">
+          <h3>${d.nombre}</h3>
+          <p>${d.descripcion}</p>
+        </div>
+        <div class="legal-download">${ICONS.download}<span>Descargar</span></div>
+      </a>
+    `).join("");
+  }
+
   function setupQuoteMenus() {
     const wraps = document.querySelectorAll(".quote-wrap");
     wraps.forEach(wrap => {
@@ -212,6 +232,7 @@
     renderProceso();
     renderPortafolio();
     renderTarifario();
+    renderLegales();
     setupQuoteMenus();
     setupNav();
   });

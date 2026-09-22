@@ -203,7 +203,30 @@ window.RDS_CONFIG = {
   },
 
   // -------------------------------------------------------------
-  // 9. CONTACTO
+  // 9. DOCUMENTOS LEGALES
+  //    Documentos públicos que los visitantes pueden descargar,
+  //    como respaldo de que la empresa está legalmente constituida.
+  //    "archivo" es la ruta al PDF dentro de assets/legal/.
+  // -------------------------------------------------------------
+  legales: {
+    titulo: "Documentos legales",
+    subtitulo: "Empresa formalmente constituida ante Cámara de Comercio y DIAN. Descarga los documentos que lo respaldan.",
+    documentos: [
+      {
+        nombre: "Certificado de Cámara de Comercio",
+        descripcion: "Certificado de matrícula mercantil, Cámara de Comercio de Cartagena.",
+        archivo: "assets/legal/certificado-camara-comercio.pdf"
+      },
+      {
+        nombre: "RUT",
+        descripcion: "Registro Único Tributario ante la DIAN.",
+        archivo: "assets/legal/rut.pdf"
+      }
+    ]
+  },
+
+  // -------------------------------------------------------------
+  // 10. CONTACTO
   // -------------------------------------------------------------
   contacto: {
     titulo: "Hablemos de tu operación",
@@ -213,7 +236,7 @@ window.RDS_CONFIG = {
   },
 
   // -------------------------------------------------------------
-  // 10. PIE DE PÁGINA
+  // 11. PIE DE PÁGINA
   // -------------------------------------------------------------
   footer: {
     nota: "Matrícula 48797302 — Cámara de Comercio de Cartagena"

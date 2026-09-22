@@ -136,7 +136,7 @@
     if (!host) return;
     host.innerHTML = cfg.tarifario.bloques.map(b => `
       <div class="tariff-block">
-        <h3>${b.nombre}</h3>
+        <h3>${b.nombre}${b.badge ? `<span class="tariff-badge">${b.badge}</span>` : ""}</h3>
         <div class="tariff-rows">
           ${b.items.map(it => {
             const isQuote = String(it.precio).trim().toLowerCase() === "cotizar";

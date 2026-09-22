@@ -108,8 +108,18 @@ window.RDS_CONFIG = {
     titulo: "Portafolio",
     subtitulo: "Trabajos realizados y tipos de operación que atendemos.",
     nota: "Seguimos sumando proyectos a esta sección a medida que avanzan nuestras operaciones.",
+    // NOTA SOBRE LAS IMÁGENES:
+    // Mientras no tengan fotos propias de sus trabajos, es más honesto para
+    // los clientes usar imágenes GENÉRICAS de referencia (no fotos reales de
+    // RDS) que fotos propias inventadas. La de "LOGÍSTICA" ya tiene una foto
+    // libre de derechos (Pexels, gratis para uso comercial) como ejemplo.
+    // Para las otras dos, busca en https://www.pexels.com o https://unsplash.com
+    // (ambos gratis y sin derechos de autor), clic derecho > "Copiar dirección
+    // de la imagen" sobre la foto que te guste, y pega esa URL en "imagen".
+    // En cuanto tengan fotos reales de sus operaciones, reemplacen estas URL
+    // por la ruta local, ej: "assets/portafolio/carga-1.jpg"
     trabajos: [
-      { imagen: "", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue de contenedores", descripcion: "Movimiento de mercancía para empresa del sector industrial." },
+      { imagen: "https://images.pexels.com/photos/4487487/pexels-photo-4487487.jpeg?w=1260&h=750&dpr=1", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue de contenedores", descripcion: "Movimiento de mercancía para empresa del sector industrial." },
       { imagen: "", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza de bodega", descripcion: "Limpieza profunda de instalaciones antes de puesta en operación." },
       { imagen: "", etiqueta: "APOYO EMPRESARIAL", titulo: "Personal de apoyo en planta", descripcion: "Refuerzo de personal operativo durante temporada alta." }
     ]
@@ -124,14 +134,18 @@ window.RDS_CONFIG = {
   // -------------------------------------------------------------
   tarifario: {
     titulo: "Tarifario",
-    subtitulo: "Valores de referencia. La tarifa final depende de volumen, horario y frecuencia.",
-    notaFinal: "Los precios no incluyen desplazamientos fuera de Cartagena ni turnos nocturnos o festivos, que se cotizan aparte.",
+    subtitulo: "Precios accesibles y justos para el mercado de Cartagena: valores de referencia, sin sorpresas. La tarifa final depende de volumen, horario y frecuencia.",
+    notaFinal: "Trabajamos con tarifas competitivas y ajustadas a cada operación, para que cuentes con un aliado serio sin pagar de más. Los precios no incluyen desplazamientos fuera de Cartagena ni turnos nocturnos o festivos, que se cotizan aparte.",
     // Mensaje que se arma solo al tocar "Correo" o "WhatsApp" en un servicio
     // marcado como "Cotizar". {servicio} y {linea} se reemplazan automáticamente.
     mensajeCotizacion: "Hola, quiero una cotización para: {servicio} ({linea}).",
+    // "badge" es la etiqueta pequeña que aparece junto al nombre de cada
+    // bloque (ej. "Precio accesible"). Déjalo vacío ("") si no quieres
+    // mostrar ninguna etiqueta en ese bloque.
     bloques: [
       {
         nombre: "Logística y carga",
+        badge: "Precio accesible",
         items: [
           { servicio: "Cargue / descargue por hora", descripcion: "Personal por hora, mínimo 4 horas.", precio: "Cotizar" },
           { servicio: "Cuadrilla completa (por día)", descripcion: "Equipo de carga para jornada completa.", precio: "Cotizar" }
@@ -139,6 +153,7 @@ window.RDS_CONFIG = {
       },
       {
         nombre: "Aseo y limpieza industrial",
+        badge: "Precio accesible",
         items: [
           { servicio: "Limpieza puntual", descripcion: "Jornada única, bodega o local.", precio: "Cotizar" },
           { servicio: "Contrato mensual", descripcion: "Visitas periódicas según frecuencia acordada.", precio: "Cotizar" }
@@ -146,6 +161,7 @@ window.RDS_CONFIG = {
       },
       {
         nombre: "Apoyo empresarial",
+        badge: "Precio accesible",
         items: [
           { servicio: "Personal de apoyo por día", descripcion: "Refuerzo operativo temporal.", precio: "Cotizar" }
         ]

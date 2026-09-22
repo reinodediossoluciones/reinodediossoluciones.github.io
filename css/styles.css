@@ -338,9 +338,17 @@ section{padding-block:var(--gap-xl);}
    ===================================================================== */
 .tariff-block + .tariff-block{margin-top:var(--gap-m);}
 .tariff-block h3{
+  display:flex;align-items:center;flex-wrap:wrap;gap:.6rem;
   font-size:1.05rem;color:var(--navy-950);
   padding-bottom:.6rem;margin-bottom:.2rem;
   border-bottom:2px solid var(--navy-950);
+}
+.tariff-badge{
+  font-family:var(--font-body);font-weight:600;font-size:.7rem;
+  letter-spacing:.03em;text-transform:uppercase;
+  color:var(--gold-900);background:rgba(191,161,96,.16);
+  border:1px solid var(--gold-500);
+  padding:.2rem .55rem;border-radius:999px;
 }
 .tariff-rows{width:100%;}
 .tariff-row{

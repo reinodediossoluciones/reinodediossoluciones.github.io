@@ -120,8 +120,8 @@ window.RDS_CONFIG = {
     // por la ruta local, ej: "assets/portafolio/carga-1.jpg"
     trabajos: [
       { imagen: "https://images.pexels.com/photos/4487487/pexels-photo-4487487.jpeg?w=1260&h=750&dpr=1", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue de contenedores", descripcion: "Movimiento de mercancía para empresa del sector industrial." },
-      { imagen: "", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza de bodega", descripcion: "Limpieza profunda de instalaciones antes de puesta en operación." },
-      { imagen: "", etiqueta: "APOYO EMPRESARIAL", titulo: "Personal de apoyo en planta", descripcion: "Refuerzo de personal operativo durante temporada alta." }
+      { imagen: "https://images.unsplash.com/photo-1740657254989-42fe9c3b8cce?auto=format&fit=crop&w=1260&h=750&q=80", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza de bodega", descripcion: "Limpieza profunda de instalaciones antes de puesta en operación." },
+      { imagen: "https://images.pexels.com/photos/4483862/pexels-photo-4483862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "APOYO EMPRESARIAL", titulo: "Personal de apoyo en planta", descripcion: "Refuerzo de personal operativo durante temporada alta." }
     ]
   },
 
@@ -148,7 +148,8 @@ window.RDS_CONFIG = {
         badge: "Precio accesible",
         items: [
           { servicio: "Cargue / descargue por hora", descripcion: "Personal por hora, mínimo 4 horas.", precio: "Cotizar" },
-          { servicio: "Cuadrilla completa (por día)", descripcion: "Equipo de carga para jornada completa.", precio: "Cotizar" }
+          { servicio: "Cuadrilla completa (por día)", descripcion: "Equipo de carga para jornada completa.", precio: "Cotizar" },
+          { servicio: "Embombinado (forrado de carga)", descripcion: "Forrado con plástico stretch para asegurar y proteger la carga en pallets o estibas.", precio: "Cotizar" }
         ]
       },
       {

@@ -41,11 +41,11 @@ window.RDS_CONFIG = {
 
   // -------------------------------------------------------------
   // 3. SERVICIOS
-  //    icono: usa uno de estos valores → "grua" | "escoba" | "engranaje"
+  //    icono: usa uno de estos valores → "grua" | "escoba" | "engranaje" | "montacarga" | "pintura"
   // -------------------------------------------------------------
   servicios: {
     titulo: "Nuestras líneas de servicio",
-    subtitulo: "Tres frentes de trabajo, un mismo estándar de cumplimiento.",
+    subtitulo: "Cinco frentes de trabajo, un mismo estándar de cumplimiento.",
     lista: [
       {
         icono: "grua",
@@ -64,6 +64,18 @@ window.RDS_CONFIG = {
         titulo: "Apoyo empresarial",
         descripcion: "Personal de soporte y apoyo operativo para empresas que necesitan reforzar equipo en tareas puntuales o continuas.",
         referencia: "LÍNEA 03 — APOYO"
+      },
+      {
+        icono: "montacarga",
+        titulo: "Lavado de montacargas",
+        descripcion: "Lavado y desengrase de montacargas, reach truck y equipos similares, cuidando motor, chasis y componentes.",
+        referencia: "LÍNEA 04 — LAVADO"
+      },
+      {
+        icono: "pintura",
+        titulo: "Pintura de paredes y bodegas",
+        descripcion: "Pintura de paredes, fachadas y bodegas industriales, con preparación de superficie y acabado uniforme.",
+        referencia: "LÍNEA 05 — PINTURA"
       }
     ]
   },
@@ -121,7 +133,9 @@ window.RDS_CONFIG = {
     trabajos: [
       { imagen: "https://images.pexels.com/photos/4487487/pexels-photo-4487487.jpeg?w=1260&h=750&dpr=1", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue de contenedores", descripcion: "Movimiento de mercancía para empresa del sector industrial." },
       { imagen: "https://images.unsplash.com/photo-1740657254989-42fe9c3b8cce?auto=format&fit=crop&w=1260&h=750&q=80", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza de bodega", descripcion: "Limpieza profunda de instalaciones antes de puesta en operación." },
-      { imagen: "https://images.pexels.com/photos/4483862/pexels-photo-4483862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "APOYO EMPRESARIAL", titulo: "Personal de apoyo en planta", descripcion: "Refuerzo de personal operativo durante temporada alta." }
+      { imagen: "https://images.pexels.com/photos/4483862/pexels-photo-4483862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "APOYO EMPRESARIAL", titulo: "Personal de apoyo en planta", descripcion: "Refuerzo de personal operativo durante temporada alta." },
+      { imagen: "https://images.pexels.com/photos/4487423/pexels-photo-4487423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "LAVADO DE MONTACARGAS", titulo: "Lavado de montacargas y reach truck", descripcion: "Limpieza y desengrase de equipos de izaje para mantenerlos en buen estado." },
+      { imagen: "https://images.pexels.com/photos/7218029/pexels-photo-7218029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "PINTURA", titulo: "Pintura de bodega industrial", descripcion: "Pintura de paredes y áreas de bodega, con preparación previa de la superficie." }
     ]
   },
 
@@ -165,6 +179,24 @@ window.RDS_CONFIG = {
         badge: "Precio accesible",
         items: [
           { servicio: "Personal de apoyo por día", descripcion: "Refuerzo operativo temporal.", precio: "Cotizar" }
+        ]
+      },
+      {
+        nombre: "Lavado de montacargas",
+        badge: "Precio accesible",
+        items: [
+          { servicio: "Lavado sencillo (exterior)", descripcion: "Lavado de carrocería y chasis de montacarga o reach truck.", precio: "Cotizar" },
+          { servicio: "Lavado y desengrase completo", descripcion: "Incluye motor, mástil y componentes, con desengrase.", precio: "Cotizar" },
+          { servicio: "Contrato periódico", descripcion: "Lavado de flota de montacargas con frecuencia acordada.", precio: "Cotizar" }
+        ]
+      },
+      {
+        nombre: "Pintura de paredes y bodegas",
+        badge: "Precio accesible",
+        items: [
+          { servicio: "Pintura por m² (interior)", descripcion: "Preparación de superficie y aplicación de pintura interior.", precio: "Cotizar" },
+          { servicio: "Pintura de bodega industrial", descripcion: "Pintura de paredes y áreas comunes de bodega.", precio: "Cotizar" },
+          { servicio: "Pintura de fachada", descripcion: "Pintura exterior de fachadas y muros perimetrales.", precio: "Cotizar" }
         ]
       }
     ]

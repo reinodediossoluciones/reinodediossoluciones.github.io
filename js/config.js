@@ -36,7 +36,19 @@ window.RDS_CONFIG = {
     titulo: "Logística y mantenimiento con orden, a tiempo",
     subtitulo: "Cargue, descargue, aseo industrial y apoyo operativo para empresas que necesitan un aliado serio, puntual y de confianza.",
     botonPrimario: "Solicitar cotización",
-    botonSecundario: "Ver servicios"
+    botonSecundario: "Ver servicios",
+    // -------------------------------------------------------------
+    // GALERÍA DEL INICIO (3 imágenes que se ven apenas se abre la página)
+    // Mientras no tengan fotos propias, se usan imágenes genéricas de
+    // referencia (libres de derechos, Pexels/Unsplash). En cuanto tengan
+    // fotos reales de sus operaciones, reemplacen "imagen" por la ruta
+    // local, ej: "assets/portafolio/carga-1.jpg"
+    // -------------------------------------------------------------
+    galeria: [
+      { imagen: "https://images.pexels.com/photos/4487487/pexels-photo-4487487.jpeg?w=1260&h=750&dpr=1", alt: "Cargue y descargue de mercancía" },
+      { imagen: "https://images.unsplash.com/photo-1740657254989-42fe9c3b8cce?auto=format&fit=crop&w=1260&h=750&q=80", alt: "Aseo y limpieza industrial" },
+      { imagen: "https://images.pexels.com/photos/4483862/pexels-photo-4483862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", alt: "Personal de apoyo operativo" }
+    ]
   },
 
   // -------------------------------------------------------------
@@ -93,8 +105,8 @@ window.RDS_CONFIG = {
   // -------------------------------------------------------------
   // 5. MISIÓN Y VISIÓN
   // -------------------------------------------------------------
-  mision: "Brindar servicios de logística, aseo industrial y apoyo empresarial con orden, puntualidad y honestidad, aportando soluciones reales a las empresas de Cartagena y la región.",
-  vision: "Ser reconocidos en la costa Caribe como la empresa de referencia en logística y servicios operativos, por la calidad de nuestro trabajo y la confianza que generamos en cada cliente.",
+  mision: "Brindar soluciones logísticas y operativas confiables a las empresas de Cartagena y la región, realizando cargue y descargue de mercancía, clasificación y organización de carga, aseo y limpieza industrial, apoyo con personal operativo, lavado de montacargas y pintura de bodegas, con orden, puntualidad y honestidad en cada servicio.",
+  vision: "Para el año 2030, ser reconocidos en la costa Caribe colombiana como la empresa de referencia en servicios logísticos y operativos, brindando cargue y descargue de mercancía, aseo industrial, apoyo empresarial y demás soluciones operativas, por la calidad de nuestro trabajo y la confianza que generamos en cada cliente.",
 
   // -------------------------------------------------------------
   // 6. CÓMO TRABAJAMOS (proceso — sí es una secuencia, por eso numerado)
@@ -102,12 +114,29 @@ window.RDS_CONFIG = {
   proceso: {
     titulo: "Cómo trabajamos",
     subtitulo: "Un mismo procedimiento para cada servicio, del primer contacto a la entrega.",
+    // Frase sobre el personal, antes de los pasos del proceso.
+    personal: "Contamos con personal altamente calificado en logística, aseo industrial y apoyo operativo, seleccionado mediante hoja de vida calificada y bajo buenos estándares de contratación.",
     pasos: [
       { titulo: "Contacto", descripcion: "Nos cuentas qué necesitas: tipo de servicio, lugar y fecha." },
-      { titulo: "Visita o diagnóstico", descripcion: "Si el trabajo lo requiere, revisamos el sitio antes de cotizar." },
-      { titulo: "Propuesta", descripcion: "Te enviamos una cotización clara, con alcance y tiempos definidos." },
+      { titulo: "Visita técnica", descripcion: "Nuestro personal calificado, supervisor, realiza una visita técnica al sitio con el fin de conocer el alcance y construir la propuesta." },
+      { titulo: "Propuesta", descripcion: "A partir de la visita, armamos una propuesta ajustada a tu operación." },
       { titulo: "Ejecución y entrega", descripcion: "Realizamos el trabajo y confirmamos contigo que quedó conforme." }
     ]
+  },
+
+  // -------------------------------------------------------------
+  // 6B. CUMPLIMIENTO Y SEGURIDAD LABORAL
+  // -------------------------------------------------------------
+  cumplimiento: {
+    titulo: "Cumplimiento y seguridad laboral",
+    subtitulo: "Operamos bajo la normatividad colombiana de seguridad y salud en el trabajo, para cuidar a nuestro personal y a las instalaciones donde trabajamos.",
+    items: [
+      { titulo: "SG-SST", descripcion: "Trabajamos conforme al Sistema de Gestión de Seguridad y Salud en el Trabajo, enmarcado en la Ley 1562 de 2012, el Decreto 1072 de 2015 y la Resolución 0312 de 2019." },
+      { titulo: "Afiliación a ARL y EPS", descripcion: "Todo nuestro personal opera afiliado a Riesgos Laborales (ARL) y al sistema de salud (EPS) antes de iniciar cualquier labor." },
+      { titulo: "Exámenes médicos ocupacionales", descripcion: "Realizamos exámenes médicos de ingreso, periódicos y de egreso, según la exposición y el riesgo de cada actividad." },
+      { titulo: "Elementos de protección personal (EPP)", descripcion: "Dotamos a nuestro personal con los EPP adecuados para cada labor: guantes, botas de seguridad, cascos, tapabocas y demás elementos según el riesgo." }
+    ],
+    nota: "Nuestro compromiso con la seguridad laboral hace parte del respaldo que ofrecemos a cada empresa que confía en nosotros."
   },
 
   // -------------------------------------------------------------

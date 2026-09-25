@@ -17,7 +17,8 @@
     mail: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14"/><path d="m3 7 9 6 9-6"/></svg>`,
     chat: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.62-.32-3.74-.9L3 21l1.9-5.76A8.5 8.5 0 1 1 21 11.5z"/></svg>`,
     pdf: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>`,
-    download: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>`
+    download: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>`,
+    escudo: `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>`
   };
 
   function txt(id, value) {
@@ -61,6 +62,11 @@
 
     txt("proc-title", cfg.proceso.titulo);
     txt("proc-sub", cfg.proceso.subtitulo);
+    txt("proc-personal", cfg.proceso.personal);
+
+    txt("cump-title", cfg.cumplimiento.titulo);
+    txt("cump-sub", cfg.cumplimiento.subtitulo);
+    txt("cump-foot", cfg.cumplimiento.nota);
 
     txt("port-title", cfg.portafolio.titulo);
     txt("port-sub", cfg.portafolio.subtitulo);
@@ -106,6 +112,27 @@
         <h3>${s.titulo}</h3>
         <p>${s.descripcion}</p>
         <span class="ref">${s.referencia}</span>
+      </article>
+    `).join("");
+  }
+
+  function renderGaleria() {
+    const host = document.getElementById("gallery-list");
+    if (!host || !cfg.hero.galeria) return;
+    host.innerHTML = cfg.hero.galeria.map(g => `
+      <div class="gallery-item">
+        <img src="${g.imagen}" alt="${g.alt}" loading="lazy">
+      </div>
+    `).join("");
+  }
+
+  function renderCumplimiento() {
+    const host = document.getElementById("cumplimiento-list");
+    if (!host) return;
+    host.innerHTML = cfg.cumplimiento.items.map(it => `
+      <article class="cumplimiento-item">
+        <div class="icon">${ICONS.escudo}</div>
+        <div><h3>${it.titulo}</h3><p>${it.descripcion}</p></div>
       </article>
     `).join("");
   }
@@ -229,6 +256,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     applyBasics();
     renderServicios();
+    renderGaleria();
+    renderCumplimiento();
     renderProceso();
     renderPortafolio();
     renderTarifario();

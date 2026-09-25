@@ -207,19 +207,23 @@ section{padding-block:var(--gap-xl);}
   .hero-grid{grid-template-columns:1.3fr 1fr;align-items:end;}
 }
 
+/* Fila de 3 fotos: SIEMPRE en una sola fila (celular y pc), ocupando
+   el ancho completo del contenedor. object-fit:cover recorta el sobrante
+   a los LADOS de cada foto (nunca estira ni deforma la imagen). */
 .hero-gallery{
-  display:grid;gap:.8rem;grid-template-columns:1fr;
-  margin-top:var(--gap-l);
+  display:grid;gap:.5rem;grid-template-columns:repeat(3,1fr);
+  margin-top:var(--gap-m);
 }
 .hero-gallery .gallery-item{
-  aspect-ratio:4/3;overflow:hidden;
+  aspect-ratio:3/4;overflow:hidden;
   border:1px solid var(--line-dark);
 }
 .hero-gallery .gallery-item img{
   width:100%;height:100%;object-fit:cover;display:block;
 }
 @media (min-width:640px){
-  .hero-gallery{grid-template-columns:repeat(3,1fr);}
+  .hero-gallery{gap:.8rem;margin-top:var(--gap-l);}
+  .hero-gallery .gallery-item{aspect-ratio:4/3;}
 }
 
 /* =====================================================================

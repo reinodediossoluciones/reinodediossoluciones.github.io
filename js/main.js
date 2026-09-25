@@ -117,11 +117,15 @@
   }
 
   function renderGaleria() {
+    // La fila de 3 fotos del inicio usa SIEMPRE las 3 primeras fotos de
+    // cfg.portafolio.trabajos (definidas en js/config.js). Así solo hay que
+    // cambiar la foto en un lugar (Portafolio) y se actualiza aquí también.
     const host = document.getElementById("gallery-list");
-    if (!host || !cfg.hero.galeria) return;
-    host.innerHTML = cfg.hero.galeria.map(g => `
+    if (!host || !cfg.portafolio || !cfg.portafolio.trabajos) return;
+    const fotos = cfg.portafolio.trabajos.slice(0, 3);
+    host.innerHTML = fotos.map(t => `
       <div class="gallery-item">
-        <img src="${g.imagen}" alt="${g.alt}" loading="lazy">
+        <img src="${t.imagen}" alt="${t.titulo || t.etiqueta || ""}" loading="lazy">
       </div>
     `).join("");
   }

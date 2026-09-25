@@ -36,19 +36,15 @@ window.RDS_CONFIG = {
     titulo: "Logística y mantenimiento con orden, a tiempo",
     subtitulo: "Cargue, descargue, aseo industrial y apoyo operativo para empresas que necesitan un aliado serio, puntual y de confianza.",
     botonPrimario: "Solicitar cotización",
-    botonSecundario: "Ver servicios",
+    botonSecundario: "Ver servicios"
     // -------------------------------------------------------------
-    // GALERÍA DEL INICIO (3 imágenes que se ven apenas se abre la página)
-    // Mientras no tengan fotos propias, se usan imágenes genéricas de
-    // referencia (libres de derechos, Pexels/Unsplash). En cuanto tengan
-    // fotos reales de sus operaciones, reemplacen "imagen" por la ruta
-    // local, ej: "assets/portafolio/carga-1.jpg"
+    // GALERÍA DEL INICIO (las 3 fotos en fila que se ven apenas se abre
+    // la página, debajo del título): YA NO SE EDITA AQUÍ.
+    // Esas 3 fotos se toman automáticamente de las 3 PRIMERAS fotos de
+    // "portafolio.trabajos" (más abajo, punto 7 de este archivo).
+    // → Para cambiar una foto del inicio, cambia la foto correspondiente
+    //   en "portafolio.trabajos" y se actualiza en los dos lugares a la vez.
     // -------------------------------------------------------------
-    galeria: [
-      { imagen: "https://images.pexels.com/photos/4487487/pexels-photo-4487487.jpeg?w=1260&h=750&dpr=1", alt: "Cargue y descargue de mercancía" },
-      { imagen: "https://images.unsplash.com/photo-1740657254989-42fe9c3b8cce?auto=format&fit=crop&w=1260&h=750&q=80", alt: "Aseo y limpieza industrial" },
-      { imagen: "https://images.pexels.com/photos/4483862/pexels-photo-4483862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", alt: "Personal de apoyo operativo" }
-    ]
   },
 
   // -------------------------------------------------------------
@@ -144,6 +140,12 @@ window.RDS_CONFIG = {
   //    Puedes dejar "imagen" vacío ("") mientras no tengas fotos:
   //    se muestra un fondo tipo lámina de contenedor.
   //    Cuando tengas fotos, pon la ruta, ej: "assets/portafolio/carga-1.jpg"
+  //
+  //    ⚠ IMPORTANTE: las 3 PRIMERAS fotos de "trabajos" (abajo) son las
+  //    MISMAS que se muestran en el INICIO, en la fila de 3 fotos debajo
+  //    del título. Si cambias la foto de uno de esos 3 primeros trabajos,
+  //    cambia automáticamente también en el inicio. No hay que tocar nada
+  //    más en ningún otro archivo.
   // -------------------------------------------------------------
   portafolio: {
     titulo: "Portafolio",

@@ -162,7 +162,7 @@ window.RDS_CONFIG = {
     trabajos: [
       { imagen: "assets/portafolio/cargue-muelle.jpg", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue en muelle", descripcion: "Cuadrilla cargando camión en el muelle de despacho de la bodega." },
       { imagen: "assets/portafolio/pintura-bodega.jpg", etiqueta: "PINTURA Y ADECUACIÓN", titulo: "Pintura de instalación industrial", descripcion: "Preparación y pintura de paredes en bodega antes de su puesta en operación." },
-      { imagen: "assets/portafolio/aseo-bodega.jpg", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza y orden de bodega", descripcion: "Aseo de pasillos y verificación de estibas en bodega de insumos." },
+      { imagen: "assets/portafolio/aseo-bodegaa.jpeg", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza y orden de bodega", descripcion: "Aseo de pasillos y verificación de estibas en bodega de insumos." },
       { imagen: "https://images.pexels.com/photos/4487423/pexels-photo-4487423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "LAVADO DE MONTACARGAS", titulo: "Lavado de montacargas y reach truck", descripcion: "Limpieza y desengrase de equipos de izaje para mantenerlos en buen estado." },
       { imagen: "https://images.pexels.com/photos/7218029/pexels-photo-7218029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "PINTURA", titulo: "Pintura de bodega industrial", descripcion: "Pintura de paredes y áreas de bodega, con preparación previa de la superficie." }
     ]

@@ -152,19 +152,17 @@ window.RDS_CONFIG = {
     subtitulo: "Trabajos realizados y tipos de operación que atendemos.",
     nota: "Seguimos sumando proyectos a esta sección a medida que avanzan nuestras operaciones.",
     // NOTA SOBRE LAS IMÁGENES:
-    // Mientras no tengan fotos propias de sus trabajos, es más honesto para
-    // los clientes usar imágenes GENÉRICAS de referencia (no fotos reales de
-    // RDS) que fotos propias inventadas. La de "LOGÍSTICA" ya tiene una foto
-    // libre de derechos (Pexels, gratis para uso comercial) como ejemplo.
-    // Para las otras dos, busca en https://www.pexels.com o https://unsplash.com
-    // (ambos gratis y sin derechos de autor), clic derecho > "Copiar dirección
-    // de la imagen" sobre la foto que te guste, y pega esa URL en "imagen".
-    // En cuanto tengan fotos reales de sus operaciones, reemplacen estas URL
-    // por la ruta local, ej: "assets/portafolio/carga-1.jpg"
+    // Los primeros 3 trabajos ya tienen FOTOS REALES de RDS (carpeta
+    // assets/portafolio/). Para cambiar una foto real por otra, solo
+    // reemplaza el valor de "imagen" por la ruta del nuevo archivo, ej:
+    // "assets/portafolio/nueva-foto.jpg" (sube la foto a esa carpeta con
+    // el mismo nombre, o cambia el nombre aquí también).
+    // Los trabajos 4 y 5 siguen con foto genérica de referencia (Pexels,
+    // libre de derechos) hasta que tengan foto real de esa actividad.
     trabajos: [
-      { imagen: "https://images.pexels.com/photos/4487487/pexels-photo-4487487.jpeg?w=1260&h=750&dpr=1", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue de contenedores", descripcion: "Movimiento de mercancía para empresa del sector industrial." },
-      { imagen: "https://images.unsplash.com/photo-1740657254989-42fe9c3b8cce?auto=format&fit=crop&w=1260&h=750&q=80", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza de bodega", descripcion: "Limpieza profunda de instalaciones antes de puesta en operación." },
-      { imagen: "https://images.pexels.com/photos/4483862/pexels-photo-4483862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "APOYO EMPRESARIAL", titulo: "Personal de apoyo en planta", descripcion: "Refuerzo de personal operativo durante temporada alta." },
+      { imagen: "assets/portafolio/cargue-muelle.jpg", etiqueta: "LOGÍSTICA", titulo: "Cargue y descargue en muelle", descripcion: "Cuadrilla cargando camión en el muelle de despacho de la bodega." },
+      { imagen: "assets/portafolio/pintura-bodega.jpg", etiqueta: "PINTURA Y ADECUACIÓN", titulo: "Pintura de instalación industrial", descripcion: "Preparación y pintura de paredes en bodega antes de su puesta en operación." },
+      { imagen: "assets/portafolio/aseo-bodega.jpg", etiqueta: "ASEO INDUSTRIAL", titulo: "Limpieza y orden de bodega", descripcion: "Aseo de pasillos y verificación de estibas en bodega de insumos." },
       { imagen: "https://images.pexels.com/photos/4487423/pexels-photo-4487423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "LAVADO DE MONTACARGAS", titulo: "Lavado de montacargas y reach truck", descripcion: "Limpieza y desengrase de equipos de izaje para mantenerlos en buen estado." },
       { imagen: "https://images.pexels.com/photos/7218029/pexels-photo-7218029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", etiqueta: "PINTURA", titulo: "Pintura de bodega industrial", descripcion: "Pintura de paredes y áreas de bodega, con preparación previa de la superficie." }
     ]
